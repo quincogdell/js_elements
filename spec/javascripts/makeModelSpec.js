@@ -24,7 +24,7 @@ describe("Model", function(){
     });
 
     it("returns the property", function(){
-      var name = model.get('name')
+      var name = model.get('name');
       expect(name).toEqual('Sparky');
     });
 
@@ -38,6 +38,8 @@ describe("Model", function(){
 
     it("doesn't set property directly on model", function(){
       expect(model.name).toBe(undefined);
+      model.set({age: 30});
+      expect(model.get("name")).toBe("Sparky");
     });
 
   });
